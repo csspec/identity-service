@@ -1,10 +1,10 @@
 package org.csspec.IdentityService.api.controller;
 
+import org.csspec.IdentityService.api.helpers.Pair;
 import org.csspec.IdentityService.api.repo.UserRepository;
 import org.csspec.IdentityService.db.Faculty;
 import org.csspec.IdentityService.db.Student;
 import org.csspec.IdentityService.db.User;
-import javafx.util.Pair;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
