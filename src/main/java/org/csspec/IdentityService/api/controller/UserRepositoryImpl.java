@@ -1,12 +1,12 @@
 package org.csspec.IdentityService.api.controller;
 
+import org.csspec.IdentityService.api.helpers.Pair;
 import org.csspec.IdentityService.api.repo.CourseRepository;
 import org.csspec.IdentityService.api.repo.UserOperations;
 import org.csspec.IdentityService.db.CoursesOpted;
 import org.csspec.IdentityService.db.Faculty;
 import org.csspec.IdentityService.db.Student;
 import org.csspec.IdentityService.db.User;
-import javafx.util.Pair;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.query.Criteria;
