@@ -1,10 +1,10 @@
 package org.csspec.IdentityService.api.repo;
 
 
+import org.csspec.IdentityService.api.helpers.Pair;
 import org.csspec.IdentityService.db.Faculty;
 import org.csspec.IdentityService.db.Student;
 import org.csspec.IdentityService.db.User;
-import javafx.util.Pair;
 import org.springframework.http.ResponseEntity;
 
 
