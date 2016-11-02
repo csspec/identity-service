@@ -22,8 +22,8 @@ public class UserRepositoryImpl implements UserOperations {
     private CourseRepository repo;
 
     public Pair<User,Faculty> findSpecificFaculty(String userId) {
-       List<User> tempUser = mongo.find(Query.query(Criteria.where("userID").is(userId)),User.class);
-        List<Faculty> tempFaculty = mongo.find(Query.query(Criteria.where("userID").is(userId)),Faculty.class);
+       List<User> tempUser = mongo.find(Query.query(Criteria.where("userId").is(userId)),User.class);
+        List<Faculty> tempFaculty = mongo.find(Query.query(Criteria.where("userId").is(userId)),Faculty.class);
         if(tempFaculty.size() == 0) {
             return new Pair<User,Faculty>(tempUser.get(0),new Faculty());
         } else {
@@ -32,8 +32,8 @@ public class UserRepositoryImpl implements UserOperations {
     }
 
     public Pair<User,Student> findSpecificStudent(String userId) {
-        List<User> tempUser = mongo.find(Query.query(Criteria.where("userID").is(userId)),User.class);
-        List<Student> tempStudent = mongo.find(Query.query(Criteria.where("userID").is(userId)),Student.class);
+        List<User> tempUser = mongo.find(Query.query(Criteria.where("userId").is(userId)),User.class);
+        List<Student> tempStudent = mongo.find(Query.query(Criteria.where("userId").is(userId)),Student.class);
         if(tempStudent.size() == 0) {
             return new Pair<User,Student>(tempUser.get(0),new Student());
         } else {

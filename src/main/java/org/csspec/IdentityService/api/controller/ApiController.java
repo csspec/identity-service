@@ -1,18 +1,18 @@
 package org.csspec.IdentityService.api.controller;
 
+import org.apache.catalina.servlet4preview.http.HttpServletRequest;
+import org.csspec.IdentityService.config.RequestValidator;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @RestController
 public class ApiController {
    @RequestMapping(value = "/identity/api", method = RequestMethod.GET)
-    public List<Map<String,String>> getAllIdentityApi() {
+    public List<Map<String,String>> getAllIdentityApi(HttpServletRequest request) {
+       RequestValidator.checkHeader(request,"ADMIN","STUDENT","TEACHER");
        List<Map<String,String>> answer = new ArrayList<>();
        String apimethods[] = {
                 "GET /identity/users",
@@ -46,7 +46,8 @@ public class ApiController {
    }
 
    @RequestMapping(value = "/academic/api", method = RequestMethod.GET)
-    List<Map<String, String>> getAllAcademicApi() {
+    List<Map<String, String>> getAllAcademicApi(HttpServletRequest request) {
+       RequestValidator.checkHeader(request,"ADMIN","STUDENT","TEACHER");
        List<Map<String,String>> answer = new ArrayList<>();
        String apimethods[] = {
            "GET /academic/courses",
